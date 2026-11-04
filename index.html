@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:,">
+<title>Dashboard Analisa Lesson Plan — SD MIMI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,700;9..144,800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f4f5f3; --surface:#ffffff; --surface2:#eef1ee; --ink:#14201c; --muted:#5b6b63; --line:#e2e7e2;
+  --teal:#0f766e; --teal-dark:#0b4f4a; --teal-soft:#e6f4f1; --amber:#b45309; --amber-soft:#fef3c7; --amber-bg:#fffbeb;
+  --green:#15803d; --green-soft:#dcfce7; --red:#b91c1c; --red-soft:#fee2e2; --orange:#c2410c; --orange-soft:#ffedd5;
+  --shadow:0 4px 24px rgba(20,32,28,.07); --radius:18px;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#0e1513; --surface:#16211e; --surface2:#1c2b27; --ink:#eef4f1; --muted:#9db0a7; --line:#263831; --teal:#2dd4bf; --teal-soft:#123b36; --green-soft:#123524; --red-soft:#3b1515; --orange-soft:#3a2310; --amber-soft:#3a2c08; --amber-bg:#221b06; --shadow:0 4px 24px rgba(0,0,0,.35); }
+}
+*{box-sizing:border-box} body{margin:0;font-family:"Plus Jakarta Sans",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+a{color:var(--teal)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 18px 48px}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:16px 0 0;font-size:13px;color:var(--muted);font-weight:600}
+.topbar b{color:var(--ink)}
+.hero{margin-top:18px;background:var(--teal-dark);color:#fff;border-radius:22px;padding:28px 28px 24px;position:relative;overflow:hidden}
+@media(prefers-color-scheme:dark){.hero{background:#0d3d38}}
+.hero h1{font-family:"Fraunces",serif;font-size:clamp(28px,5vw,44px);line-height:1.05;margin:8px 0 10px;letter-spacing:-.02em;max-width:680px}
+.hero p{opacity:.9;max-width:640px;margin:0;font-size:15px;line-height:1.6}
+.hero-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.pill{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);padding:6px 11px;border-radius:999px;font-size:12.5px;font-weight:600}
+.eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;opacity:.85}
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:14px}
+@media(max-width:900px){.kpis{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:560px){.kpis{grid-template-columns:repeat(2,1fr)}}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:var(--shadow)}
+.kpi label{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.kpi strong{display:block;font-size:32px;line-height:1;margin:6px 0 4px;letter-spacing:-.03em}
+.kpi span{font-size:12.5px;color:var(--muted)}
+.kpi.green strong{color:var(--green)} .kpi.red strong{color:var(--red)} .kpi.amber strong{color:var(--amber)} .kpi.teal strong{color:var(--teal)}
+.grid2{display:grid;grid-template-columns:1fr 1.35fr;gap:14px;margin-top:14px}
+@media(max-width:860px){.grid2{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+.card h2{margin:0 0 4px;font-size:17px;letter-spacing:-.01em}
+.card h3{margin:0 0 6px;font-size:15px}
+.card p.sub{margin:0;color:var(--muted);font-size:13.5px}
+.donut-wrap{display:flex;gap:18px;align-items:center;margin-top:14px;flex-wrap:wrap}
+.legend{display:grid;gap:8px;font-size:13.5px}
+.legend div{display:flex;gap:8px;align-items:center}
+.dot{width:10px;height:10px;border-radius:50%;flex:none}
+.bars{margin-top:14px;display:grid;gap:9px}
+.bar-row{display:grid;grid-template-columns:108px 1fr 34px;gap:10px;align-items:center;font-size:12.5px}
+.bar-row b{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track{height:9px;background:var(--surface2);border-radius:999px;overflow:hidden}
+.fill{height:100%;border-radius:999px;background:var(--teal)}
+.fill.red{background:#dc2626}.fill.amber{background:#d97706}.fill.green{background:#16a34a}
+.controls{position:sticky;top:0;z-index:5;background:var(--bg);padding:16px 0 10px;margin-top:8px}
+.controls-inner{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.search{flex:1;min-width:200px;display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:10px 14px}
+.search input{border:0;outline:0;background:transparent;width:100%;font:inherit;color:var(--ink)}
+.filters{display:flex;gap:6px;flex-wrap:wrap}
+.fbtn{border:1px solid var(--line);background:var(--surface);padding:9px 13px;border-radius:999px;font-weight:700;font-size:13px;cursor:pointer;color:var(--ink)}
+.fbtn.active{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+select{padding:10px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;font-size:13px;font-weight:600}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:18px 0 12px}
+.section-head h2{margin:0;font-size:22px;letter-spacing:-.02em}
+.section-head p{margin:2px 0 0;color:var(--muted);font-size:13.5px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:960px){.cards{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.cards{grid-template-columns:1fr}}
+.tcard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:10px;box-shadow:var(--shadow)}
+.tcard-top{display:flex;gap:12px;align-items:flex-start}
+.avatar{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;font-weight:800;font-size:14px;flex:none;background:var(--teal-soft);color:var(--teal-dark)}
+@media(prefers-color-scheme:dark){.avatar{color:#99f6e4}}
+.avatar.red{background:var(--red-soft);color:var(--red)} .avatar.green{background:var(--green-soft);color:var(--green)} .avatar.amber{background:var(--orange-soft);color:var(--orange)}
+.tcard h3{margin:0;font-size:16px} .tcard .folder{font-size:12.5px;color:var(--muted)}
+.badge{margin-left:auto;font-size:11px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:6px 8px;border-radius:999px;white-space:nowrap}
+.badge.ok{background:var(--green-soft);color:var(--green)} .badge.none{background:var(--red-soft);color:var(--red)} .badge.rev{background:var(--orange-soft);color:var(--orange)}
+.meta{display:flex;gap:14px;font-size:12.5px;color:var(--muted);border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);padding:9px 0}
+.meta b{color:var(--ink);font-size:14px}
+.kesimpulan{font-size:13.5px;line-height:1.55;background:var(--surface2);border-radius:12px;padding:11px 12px}
+.kesimpulan b{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.detail{display:none;font-size:13.5px;color:var(--muted);line-height:1.6;border-top:1px solid var(--line);padding-top:10px}
+.tcard.open .detail{display:block}
+.toggle{margin-top:auto;border:0;background:transparent;color:var(--teal);font-weight:800;font-size:13px;cursor:pointer;text-align:left;padding:4px 0}
+.insights{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+@media(max-width:860px){.insights{grid-template-columns:1fr}}
+.list{margin:10px 0 0;padding:0;list-style:none;display:grid;gap:10px;font-size:13.5px}
+.list li{display:flex;gap:10px} .list li::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--teal);margin-top:7px;flex:none}
+.list.red li::before{background:#dc2626}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.chip{font-size:12.5px;font-weight:700;background:var(--teal-soft);color:var(--teal-dark);padding:7px 10px;border-radius:999px}
+@media(prefers-color-scheme:dark){.chip{color:#99f6e4}}
+.callout{background:var(--amber-bg);border:1px solid #fde68a;border-radius:14px;padding:14px;font-size:13.5px;margin-top:12px}
+@media(prefers-color-scheme:dark){.callout{border-color:#854d0e}}
+footer{margin-top:22px;font-size:12.5px;color:var(--muted);line-height:1.6;border-top:1px solid var(--line);padding-top:16px}
+.empty{display:none;text-align:center;padding:28px;background:var(--surface);border:1px dashed var(--line);border-radius:16px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar"><span>SD MIMI &nbsp;•&nbsp; Kurikulum</span><span>Folder: <b>5. Modul Ajar</b> &nbsp;•&nbsp; November 2026</span></div>
+
+  <header class="hero">
+    <div class="eyebrow">Dashboard Kurikulum</div>
+    <h1>Analisa Lesson Plan Guru</h1>
+    <p>Hasil pemeriksaan Modul Ajar / Lesson Plan / RPP untuk 15 guru — dilihat dari kelengkapan, kesesuaian dengan Pembelajaran Mendalam (Deep Learning), dan penggunaan <strong>8 Dimensi Profil Lulusan (DPL)</strong> menggantikan Profil Pelajar Pancasila.</p>
+    <div class="hero-meta">
+      <span class="pill">15 guru diperiksa</span><span class="pill">253 dokumen terinventarisasi</span><span class="pill">Standar: Deep Learning + 8 DPL</span>
+    </div>
+  </header>
+
+  <section class="kpis" aria-label="Ringkasan">
+    <div class="kpi teal"><label>Total Guru</label><strong>15</strong><span>sesuai portofolio guru</span></div>
+    <div class="kpi"><label>Total Dokumen</label><strong>253</strong><span>file doc / pdf di Drive</span></div>
+    <div class="kpi green"><label>Lengkap &amp; Benar</label><strong>1</strong><span>6,7% — Mr Rudolf</span></div>
+    <div class="kpi amber"><label>Perlu Revisi</label><strong>10</strong><span>66,7% — lihat alasan per guru</span></div>
+    <div class="kpi red"><label>Tidak Ada</label><strong>4</strong><span>26,7% — prioritas tindak lanjut</span></div>
+  </section>
+
+  <section class="grid2">
+    <div class="card">
+      <h2>Kesimpulan Akhir</h2><p class="sub">Ringkasan hasil pemeriksaan Modul Ajar seluruh guru.</p>
+      <div class="donut-wrap">
+        <svg width="132" height="132" viewBox="0 0 132 132" role="img" aria-label="Donat kesimpulan: 1 lengkap dan benar, 10 revisi, 4 tidak ada">
+          <circle cx="66" cy="66" r="52" fill="none" stroke="var(--surface2)" stroke-width="18"/>
+          <circle cx="66" cy="66" r="52" fill="none" stroke="#16a34a" stroke-width="18" stroke-dasharray="21.8 326.7" transform="rotate(-90 66 66)" stroke-linecap="butt"/>
+          <circle cx="66" cy="66" r="52" fill="none" stroke="#ea580c" stroke-width="18" stroke-dasharray="217.8 326.7" stroke-dashoffset="-21.8" transform="rotate(-90 66 66)"/>
+          <circle cx="66" cy="66" r="52" fill="none" stroke="#dc2626" stroke-width="18" stroke-dasharray="87.1 326.7" stroke-dashoffset="-239.6" transform="rotate(-90 66 66)"/>
+          <text x="66" y="62" text-anchor="middle" font-size="22" font-weight="800" fill="var(--ink)">15</text>
+          <text x="66" y="80" text-anchor="middle" font-size="11" fill="var(--muted)">guru</text>
+        </svg>
+        <div class="legend">
+          <div><span class="dot" style="background:#16a34a"></span> Sudah lengkap dan benar — <b>1</b></div>
+          <div><span class="dot" style="background:#ea580c"></span> Revisi karena alasan tertentu — <b>10</b></div>
+          <div><span class="dot" style="background:#dc2626"></span> Tidak ada lesson plan — <b>4</b></div>
+        </div>
+      </div>
+      <div class="callout"><strong>Catatan kurikulum:</strong> Masalah terbanyak bukan kelengkapan file, melainkan profil lama. Banyak dokumen masih memakai Profil Pelajar Pancasila, atau dobel PPP + 8 DPL. Yang berlaku sekarang hanya 8 DPL.</div>
+    </div>
+    <div class="card">
+      <h2>Dokumen Terbanyak per Guru</h2><p class="sub">Jumlah file doc/pdf yang ditemukan di folder Drive masing-masing guru.</p>
+      <div class="bars" id="bars"></div>
+      <p class="sub" style="margin-top:10px">Jumlah file banyak belum berarti benar — contohnya PJOK Mr Wahyu terbanyak (63 file) tetapi tetap perlu revisi profil. Sebaliknya Mr Rudolf hanya 8 file, namun sudah lengkap dan benar.</p>
+    </div>
+  </section>
+
+  <div class="controls"><div class="controls-inner">
+    <label class="search">🔍 <input id="q" type="search" placeholder="Cari nama guru, mapel, atau kata kunci… mis. Pancasila, Mandarin, PJOK"></label>
+    <div class="filters" role="group" aria-label="Filter kesimpulan">
+      <button class="fbtn active" data-f="all">Semua (15)</button>
+      <button class="fbtn" data-f="ok">✓ Lengkap &amp; Benar (1)</button>
+      <button class="fbtn" data-f="rev">Revisi (10)</button>
+      <button class="fbtn" data-f="none">Tidak Ada (4)</button>
+    </div>
+    <select id="sort" aria-label="Urutkan"><option value="no">Urut: Nomor portofolio</option><option value="docs-desc">Dokumen terbanyak</option><option value="docs-asc">Dokumen tersedikit</option><option value="name">Nama A–Z</option></select>
+  </div></div>
+
+  <div class="section-head"><div><h2>Daftar Per Guru</h2><p>Klik “Lihat catatan lengkap” pada kartu untuk membaca catatan utama pemeriksa.</p></div><span id="count" style="font-size:13px;color:var(--muted);font-weight:700"></span></div>
+  <div class="cards" id="cards"></div>
+  <div class="empty" id="empty">Tidak ada guru yang cocok dengan pencarian / filter ini.</div>
+
+  <section class="insights">
+    <div class="card">
+      <h2>🚨 Prioritas Tindak Lanjut</h2><p class="sub">Urut dari yang paling mendesak untuk ditindaklanjuti kepala sekolah / kurikulum.</p>
+      <ul class="list red">
+        <li><span><b>Mr Budi, Mr Serge, Ms Lydia</b> — tidak ada folder sama sekali di Drive. Semua mapel yang menjadi tanggung jawabnya belum ada lesson plan-nya.</span></li>
+        <li><span><b>Ms Vero</b> — hanya 1 file ringkasan kosakata English Grade 4, bukan Modul Ajar. Di dashboard ini kesimpulannya: tidak ada lesson plan.</span></li>
+        <li><span><b>Wu Laoshi</b> — ada file tiap kelas, tetapi isinya hanya materi / daftar angka, bukan Modul Ajar. Perlu dibuat ulang ke format penuh.</span></li>
+        <li><span><b>Ms Tiara</b> — Pancasila hanya Semester 1 dan semua sampel masih berat memakai Profil Pelajar Pancasila dengan format lama. Perlu revisi total.</span></li>
+        <li><span><b>Ms Erika, Ms Putri, Ms Juwitha</b> — cakupan sebagian. Beberapa kelas / mapel masih hilang.</span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>Temuan Sistemik &amp; Standar 8 DPL</h2><p class="sub">Pola yang berulang di banyak dokumen, bukan hanya satu guru.</p>
+      <ul class="list">
+        <li><span><b>Dobel profil:</b> dokumen menempelkan Profil Pelajar Pancasila lama di atas, lalu 8 DPL di bawahnya. Hapus PPP seluruhnya.</span></li>
+        <li><span><b>Tempel semua dimensi:</b> sebaiknya pilih hanya 2–3 DPL yang benar-benar dilatih dan dinilai pada pertemuan itu.</span></li>
+        <li><span><b>Judul belum tentu isi:</b> beberapa dokumen berjudul Deep Learning tetapi strukturnya masih Pendahuluan–Inti–Penutup lama, tanpa fase berkesadaran, bermakna, menggembirakan yang eksplisit.</span></li>
+        <li><span><b>Contoh patokan internal:</b> Bahasa Indonesia Kelas 3 Mr Adi, proyek Ms Alfi, dan RPM Mr Rudolf.</span></li>
+      </ul>
+      <div class="chips"><span class="chip">Keimanan &amp; Ketakwaan</span><span class="chip">Kewargaan</span><span class="chip">Penalaran Kritis</span><span class="chip">Kreativitas</span><span class="chip">Kolaborasi</span><span class="chip">Kemandirian</span><span class="chip">Kesehatan</span><span class="chip">Komunikasi</span></div>
+    </div>
+  </section>
+
+  <footer>
+    Dashboard Analisa Lesson Plan — SD MIMI • Kurikulum • November 2026. Untuk pertanyaan atau klarifikasi hasil pemeriksaan, silakan menghubungi tim kurikulum.
+  </footer>
+</div>
+
+<script>
+var TEACHERS=[
+{n:1,name:"MR ADI",folder:"ADI",docs:49,status:"Lengkap (semua mapel ada file)",cat:"rev",badge:"Revisi",note:"B.Indo K3 kuat Deep Learning + DPL. PAI K3 masih PPP — revisi ke DPL. Ada file K4/K6 di luar portofolio, perlu verifikasi/rapikan.",kes:"Revisi karena masih ada dokumen yang memakai Profil Pelajar Pancasila (PAI Kelas 3) dan ada file di luar portofolio yang perlu dirapikan, walaupun cakupannya sudah lengkap."},
+{n:2,name:"MR BUDI",folder:"tidak ada",docs:0,status:"BELUM ADA SAMA SEKALI",cat:"none",badge:"Tidak Ada",note:"Semua mapel K5 (Agama Islam, B.Indo, English, IPAS, Matematika, Science) belum ada. Prioritas.",kes:"Tidak ada lesson plan."},
+{n:3,name:"MR DIDIT",folder:"Mr Didit",docs:7,status:"Lengkap (semua mapel ada file)",cat:"rev",badge:"Revisi",note:"ICT K1-6 + PAI K4 ada. ICT: pendekatan Deep Learning ada, tapi masih PPP. PAI K4 format lama + PPP — revisi ke format Deep Learning + DPL.",kes:"Revisi karena masih memakai Profil Pelajar Pancasila dan PAI Kelas 4 masih format lama, belum format Pembelajaran Mendalam."},
+{n:4,name:"MR RUDOLF",folder:"Mr Rudolf",docs:8,status:"Lengkap",cat:"ok",badge:"Lengkap & Benar",note:"Math CIE K6 (RPM) ada, format Deep Learning, DPL: Penalaran Kritis, Kolaborasi, Komunikasi, Kreativitas. Tidak ditemukan PPP pada sampel Bab 1.",kes:"Sudah lengkap dan benar."},
+{n:5,name:"MR SERGE",folder:"tidak ada",docs:0,status:"BELUM ADA SAMA SEKALI",cat:"none",badge:"Tidak Ada",note:"Science K6 belum ada. Prioritas.",kes:"Tidak ada lesson plan."},
+{n:6,name:"MR WAHYU",folder:"MR WAHYU",docs:63,status:"Lengkap (semua kelas ada file)",cat:"rev",badge:"Revisi",note:"PJOK K1-6 banyak bab. Sampel K1 Bab 1 ada eksplorasi Deep Learning, tapi masih PPP (Mandiri, Gotong Royong, Bernalar Kritis) — ganti ke 8 DPL, terutama Kesehatan. Sebagian file masih bernama RPP.",kes:"Revisi karena masih memakai Profil Pelajar Pancasila dan sebagian file masih berbentuk RPP, bukan Modul Ajar Pembelajaran Mendalam."},
+{n:7,name:"MS ALFI",folder:"Ms Alfi",docs:44,status:"Lengkap (semua mapel K4 ada file)",cat:"rev",badge:"Revisi Ringan",note:"Format Perencanaan Pembelajaran Deep Learning (Identifikasi-Desain-Asesmen), DPL tercantum, ada proyek. Label mindful/meaningful/joyful belum eksplisit pada sampel — tambahkan agar mudah diperiksa. Tidak ditemukan PPP pada sampel.",kes:"Revisi ringan karena label berkesadaran, bermakna, dan menggembirakan belum eksplisit, walaupun format dan DPL-nya sudah sesuai."},
+{n:8,name:"MS ERIKA",folder:"Ms Erika",docs:13,status:"SEBAGIAN",cat:"rev",badge:"Revisi",note:"Hanya Agama Katholik K3 & K6 dan SBDP K1 & K2. Hilang: Agama Katholik K1,K2,K4,K5; B.Indo, IPAS, Matematika K2. AgKat K3: Deep Learning/SOLO tapi TANPA dimensi profil sama sekali. SBdP K1: PPP + 8 DPL dobel — hapus PPP.",kes:"Revisi karena cakupannya belum lengkap, ada dokumen yang dobel Profil Pelajar Pancasila dan 8 DPL, dan ada dokumen tanpa dimensi profil sama sekali."},
+{n:9,name:"MS JUWITHA",folder:"Ms. Juwitha",docs:2,status:"SEBAGIAN",cat:"rev",badge:"Revisi",note:"Hanya PAK K4 & K5. Hilang: Agama Kristen K6. Kualitas sampel baik (Deep Learning + DPL). Nama file samar — ganti jadi Mapel_Kelas_Bab.",kes:"Revisi karena belum lengkap, Agama Kristen Kelas 6 belum ada."},
+{n:10,name:"MS LYDIA",folder:"tidak ada",docs:0,status:"BELUM ADA SAMA SEKALI",cat:"none",badge:"Tidak Ada",note:"Agama Kristen K1,K2,K3 belum ada. Prioritas.",kes:"Tidak ada lesson plan."},
+{n:11,name:"MS NUR",folder:"Ms. Nur Azizah",docs:50,status:"Lengkap + file ekstra perlu verifikasi",cat:"rev",badge:"Revisi",note:"Semua mapel K1 ada + Science K2. TAPI folder juga berisi PAI K2 & K3, Pancasila K1, SBDP K1, Basa Jawa Fase C K5 — di luar portofolio Nur. Verifikasi kepemilikan/pemindahan. Sampel: BIndo K1 & Pancasila K1 dobel PPP + 8 DPL; IPAS K1 format lama + PPP saja.",kes:"Revisi karena masih dobel Profil Pelajar Pancasila dan 8 DPL, IPAS Kelas 1 masih format lama, dan ada file di luar portofolio yang perlu diverifikasi."},
+{n:12,name:"MS PUTRI",folder:"Ms Putri",docs:6,status:"SEBAGIAN (hanya K6)",cat:"rev",badge:"Revisi",note:"K6: IPAS, PAI, Matematika, SBdP, Pancasila ada. Hilang: K5 Bahasa Jawa & SBDP; K6 Bahasa Indonesia & Bahasa Jawa. Sampel Pancasila K6 baik: Deep Learning, DPL, PBL, Meaningful.",kes:"Revisi karena belum lengkap, Bahasa Jawa dan SBDP Kelas 5 serta Bahasa Indonesia dan Bahasa Jawa Kelas 6 belum ada."},
+{n:13,name:"MS TIARA",folder:"Ms Tiara",docs:4,status:"Lengkap untuk Semester 1 saja",cat:"rev",badge:"Revisi Total",note:"Pancasila K1,K2,K3,K5 ada (Semester 1). SEMUA sampel masih PPP berat (K1: 8 kali disebut, format lama) — revisi total ke 8 DPL + format Deep Learning. Periksa Semester 2.",kes:"Revisi karena masih memakai Profil Pelajar Pancasila secara berat dan formatnya masih lama, belum Pembelajaran Mendalam dan belum 8 DPL."},
+{n:14,name:"MS VERO",folder:"Ms Veronica",docs:1,status:"HAMPIR BELUM ADA",cat:"none",badge:"Tidak Ada",note:"Hanya 1 file: SUMMARY ENGLISH GRADE 4 UNIT 2 — itu ringkasan kosakata, BUKAN Modul Ajar. Hilang sebagai Modul Ajar: English K2,K3,K4,K6; Math CIE K2; Science K4. Prioritas.",kes:"Tidak ada lesson plan."},
+{n:15,name:"WU LAO SHI",folder:"Wu. Laoshi Betty",docs:6,status:"Ada file tiap kelas, tapi BUKAN Modul Ajar",cat:"rev",badge:"Revisi — Buat Ulang",note:"Mandarin K1-6 masing-masing 1 file. Sampel K1 hanya daftar angka 1-10 + latihan, tanpa identitas, tujuan, kegiatan, asesmen, DPL, Deep Learning. Perlu dibuat ulang ke format Modul Ajar. K6 hanya Bab 4 (PDF).",kes:"Revisi karena file yang ada bukan Modul Ajar, melainkan hanya materi, sehingga perlu dibuat ulang ke format Modul Ajar Pembelajaran Mendalam dengan 8 DPL."}
+];
+function initials(n){var p=n.replace(/^(MR|MS)\s+/,'').split(' ');return (p[0][0]+(p[1]?p[1][0]:'')).toUpperCase()}
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+var filter='all';
+function render(){
+  var q=document.getElementById('q').value.toLowerCase().trim();
+  var sort=document.getElementById('sort').value;
+  var list=TEACHERS.filter(function(t){ if(filter!=='all'&&t.cat!==filter)return false; if(q){var hay=(t.name+' '+t.folder+' '+t.status+' '+t.note+' '+t.kes).toLowerCase(); if(hay.indexOf(q)===-1)return false;} return true;});
+  if(sort==='docs-desc')list.sort(function(a,b){return b.docs-a.docs}); else if(sort==='docs-asc')list.sort(function(a,b){return a.docs-b.docs}); else if(sort==='name')list.sort(function(a,b){return a.name.localeCompare(b.name)}); else list.sort(function(a,b){return a.n-b.n});
+  document.getElementById('count').textContent='Menampilkan '+list.length+' dari 15 guru';
+  document.getElementById('empty').style.display=list.length?'none':'block';
+  document.getElementById('cards').innerHTML=list.map(function(t){
+    var cls=t.cat==='ok'?'green':(t.cat==='none'?'red':'amber');
+    return '<article class="tcard"><div class="tcard-top"><div class="avatar '+cls+'">'+initials(t.name)+'</div><div><h3>'+esc(t.name)+'</h3><div class="folder">Folder Drive: '+esc(t.folder)+' • No. '+t.n+'</div></div><span class="badge '+t.cat+'">'+esc(t.badge)+'</span></div>'
+    +'<div class="meta"><span>Dokumen<br><b>'+t.docs+'</b> file</span><span>Status cakupan<br><b style="font-size:12.5px">'+esc(t.status)+'</b></span></div>'
+    +'<div class="kesimpulan"><b>Kesimpulan</b>'+esc(t.kes)+'</div>'
+    +'<div class="detail"><b style="color:var(--ink)">Catatan utama:</b><br>'+esc(t.note)+'</div>'
+    +'<button class="toggle" type="button">Lihat catatan lengkap ↓</button></article>';
+  }).join('');
+  var btns=document.querySelectorAll('.toggle');
+  for(var i=0;i<btns.length;i++){btns[i].addEventListener('click',function(){var c=this.parentElement;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'Tutup catatan ↑':'Lihat catatan lengkap ↓';});}
+}
+document.getElementById('q').addEventListener('input',render);
+document.getElementById('sort').addEventListener('change',render);
+var fb=document.querySelectorAll('.fbtn'); for(var j=0;j<fb.length;j++){fb[j].addEventListener('click',function(){for(var k=0;k<fb.length;k++)fb[k].classList.remove('active');this.classList.add('active');filter=this.getAttribute('data-f');render();});}
+var topTeachers=TEACHERS.slice().sort(function(a,b){return b.docs-a.docs}).slice(0,7);
+document.getElementById('bars').innerHTML=topTeachers.map(function(t){var pct=Math.max(2,Math.round(t.docs/63*100));var cls=t.cat==='ok'?'green':(t.cat==='none'?'red':'');return '<div class="bar-row"><b>'+esc(t.name)+'</b><div class="track"><div class="fill '+cls+'" style="width:'+pct+'%"></div></div><span>'+t.docs+'</span></div>'}).join('');
+render();
+</script>
+</body>
+</html>
