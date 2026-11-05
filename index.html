@@ -146,7 +146,7 @@ footer{margin-top:22px;font-size:12.5px;color:var(--muted);line-height:1.6;borde
 .dircard.next{border-style:dashed;background:var(--surface2);box-shadow:none}
 .dircard.next .fno{color:var(--muted)}
 .growth{height:9px;background:var(--surface);border:1px solid var(--line);border-radius:999px;overflow:hidden}
-.growth div{height:100%;width:6%;background:#d4a017;border-radius:999px}
+.growth div{height:100%;width:9%;background:#d4a017;border-radius:999px}
 .view{display:none}
 .view.active{display:block}
 .backbtn{display:inline-flex;align-items:center;gap:8px;margin-top:18px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;font-weight:800;font-size:13.5px;padding:10px 16px;border-radius:999px;cursor:pointer;box-shadow:var(--shadow)}
@@ -228,20 +228,20 @@ a.backbtn{text-decoration:none}
         <h2>Fakta Laporan</h2>
         <dl>
           <div class="frow"><dt>Guru diperiksa</dt><dd>15 <small>guru</small></dd></div>
-          <div class="frow"><dt>Folder dilaporkan</dt><dd>2 <small>folder</small></dd></div>
-          <div class="frow"><dt>Berkas diperiksa</dt><dd>275 <small>berkas</small></dd></div>
+          <div class="frow"><dt>Folder dilaporkan</dt><dd>3 <small>folder</small></dd></div>
+          <div class="frow"><dt>Berkas diperiksa</dt><dd>335 <small>berkas</small></dd></div>
           <div class="frow"><dt>Periode jurnal dinilai</dt><dd>Juli–Nov <small>2026</small></dd></div>
         </dl>
       </aside>
     </div>
   </header>
 
-  <div class="part-head" id="daftar-folder"><div><h2>Pilih Folder Laporan</h2><p>Klik tombol folder untuk membuka laporannya. Nomor mengikuti nomor folder arsip administrasi guru. Folder yang belum dilaporkan tampil redup dan belum dapat dibuka laporannya.</p></div><span class="part-tag">2 dari ±35 folder dilaporkan</span></div>
+  <div class="part-head" id="daftar-folder"><div><h2>Pilih Folder Laporan</h2><p>Klik tombol folder untuk membuka laporannya. Nomor mengikuti nomor folder arsip administrasi guru. Folder yang belum dilaporkan tampil redup dan belum dapat dibuka laporannya.</p></div><span class="part-tag">3 dari ±35 folder dilaporkan</span></div>
 
   <div class="fgrid" id="fgrid" role="navigation" aria-label="Tombol folder laporan 01 sampai 35"></div>
 
-  <div class="growth" role="img" aria-label="Kemajuan pelaporan folder: 2 dari sekitar 35 folder" style="margin-top:16px"><div></div></div>
-  <p style="font-size:12.5px;color:var(--muted);margin:8px 0 0"><b style="color:var(--ink)">2 dari ±35 folder</b> sudah dilaporkan pada periode ini. Folder lain ditambahkan menyusul dengan format penilaian yang sama.</p>
+  <div class="growth" role="img" aria-label="Kemajuan pelaporan folder: 3 dari sekitar 35 folder" style="margin-top:16px"><div></div></div>
+  <p style="font-size:12.5px;color:var(--muted);margin:8px 0 0"><b style="color:var(--ink)">3 dari ±35 folder</b> sudah dilaporkan pada periode ini. Folder lain ditambahkan menyusul dengan format penilaian yang sama.</p>
 
   <div class="fs-banner">
     <div>
@@ -251,6 +251,98 @@ a.backbtn{text-decoration:none}
     <button class="fs-go" type="button" onclick="location.hash='#/file-saya'">Buka File Saya →</button>
   </div>
   </div><!-- /view-home -->
+
+  <div class="view" id="view-01">
+  <header class="pagehead">
+    <a class="backlink" href="#/">← Kembali ke Daftar Folder</a>
+    <div class="crumb" style="margin-top:16px">Daftar Folder Laporan &nbsp;/&nbsp; <b>Folder 01</b></div>
+    <div class="ph-row">
+      <div class="ph-num" aria-hidden="true">01</div>
+      <div>
+        <h1>Program Tahunan (Prota)</h1>
+        <p>Kelengkapan Program Tahunan setiap guru dibandingkan dengan portofolio mata pelajaran dan kelas yang diampunya. Penilaian berdasarkan isi dan nama file yang ditemukan di folder Drive masing-masing guru. Halaman ini khusus laporan Folder 01 — daftar folder dan laporan folder lain berada di halaman masing-masing.</p>
+        <div class="hero-meta"><span class="pill">Folder arsip: 1. Program Tahunan</span><span class="pill">15 guru • 60 file Prota</span><span class="pill">Periode: November 2026</span><a class="pill" href="https://drive.google.com/drive/folders/1ctpH6ug_nnIN0mwxmjxktam5BW1NIeRi?usp=sharing" target="_blank" rel="noopener" style="color:#fff;text-decoration:none">Buka Folder 1. Program Tahunan di Google Drive ↗</a></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="callout" style="margin:14px 0 14px">📁 <strong>Akses file pribadi:</strong> file asli Prota tersimpan di Google Drive. Setiap guru membuka folder miliknya sendiri melalui halaman <button type="button" onclick="location.hash='#/file-saya'" style="border:0;background:transparent;color:var(--teal);font:inherit;font-weight:800;cursor:pointer;padding:0;text-decoration:underline">File Saya</button> — atau tombol “File Saya” pada kartunya masing-masing di bawah. Folder guru lain tidak dibagikan kepadanya, sehingga tidak dapat ia buka.</div>
+
+  <section class="kpis" aria-label="Ringkasan Program Tahunan">
+    <div class="kpi teal"><label>Total Guru</label><strong>15</strong><span>sesuai portofolio guru</span></div>
+    <div class="kpi"><label>Total File Prota</label><strong>60</strong><span>di 11 folder guru</span></div>
+    <div class="kpi green"><label>Lengkap</label><strong>6</strong><span>40,0% — sesuai portofolio</span></div>
+    <div class="kpi amber"><label>Belum Lengkap</label><strong>5</strong><span>33,3% — lihat alasan per guru</span></div>
+    <div class="kpi red"><label>Tidak Ada</label><strong>4</strong><span>26,7% — belum ada folder</span></div>
+  </section>
+
+  <section class="grid2">
+    <div class="card">
+      <h2>Kesimpulan Program Tahunan</h2><p class="sub">Ringkasan kelengkapan Prota seluruh guru dibandingkan portofolionya.</p>
+      <div class="donut-wrap">
+        <svg width="132" height="132" viewBox="0 0 132 132" role="img" aria-label="Donat Program Tahunan: 6 lengkap, 5 belum lengkap, 4 tidak ada">
+          <circle cx="66" cy="66" r="52" fill="none" stroke="var(--surface2)" stroke-width="18"/>
+          <circle cx="66" cy="66" r="52" fill="none" stroke="#16a34a" stroke-width="18" stroke-dasharray="130.7 326.7" transform="rotate(-90 66 66)" stroke-linecap="butt"/>
+          <circle cx="66" cy="66" r="52" fill="none" stroke="#ea580c" stroke-width="18" stroke-dasharray="108.9 326.7" stroke-dashoffset="-130.7" transform="rotate(-90 66 66)"/>
+          <circle cx="66" cy="66" r="52" fill="none" stroke="#dc2626" stroke-width="18" stroke-dasharray="87.1 326.7" stroke-dashoffset="-239.6" transform="rotate(-90 66 66)"/>
+          <text x="66" y="62" text-anchor="middle" font-size="22" font-weight="800" fill="var(--ink)">15</text>
+          <text x="66" y="80" text-anchor="middle" font-size="11" fill="var(--muted)">guru</text>
+        </svg>
+        <div class="legend">
+          <div><span class="dot" style="background:#16a34a"></span> Lengkap sesuai portofolio — <b>6</b></div>
+          <div><span class="dot" style="background:#ea580c"></span> Belum lengkap / perlu dirapikan — <b>5</b></div>
+          <div><span class="dot" style="background:#dc2626"></span> Tidak ada folder / Prota — <b>4</b></div>
+        </div>
+      </div>
+      <div class="callout"><strong>Catatan kurikulum:</strong> Enam guru Prota-nya sudah lengkap sesuai portofolio. Kekurangan terbanyak bukan pada guru yang sudah mengumpulkan, melainkan 4 guru yang belum memiliki folder sama sekali, ditambah beberapa mapel yang masih hilang pada guru yang foldernya sudah ada.</div>
+    </div>
+    <div class="card">
+      <h2>File Prota Terbanyak per Guru</h2><p class="sub">Jumlah file Prota yang ditemukan di folder Drive masing-masing guru. File kunci Word (~$) dan folder CP terpisah tidak dihitung sebagai Prota.</p>
+      <div class="bars" id="pbars"></div>
+      <p class="sub" style="margin-top:10px">Jumlah file terbanyak belum berarti paling lengkap — Mr Adi terbanyak (14 file) tetapi foldernya masih perlu dirapikan dan diverifikasi, sedangkan Mr Rudolf cukup 1 file karena Prota Matematika Kelas 6-nya sudah mencakup Semester I dan II.</p>
+    </div>
+  </section>
+
+  <div class="controls"><div class="controls-inner">
+    <label class="search">🔍 <input id="pq" type="search" placeholder="Cari nama guru, mapel, atau kata kunci Prota… mis. PJOK, Pancasila, English"></label>
+    <div class="filters" role="group" aria-label="Filter Program Tahunan">
+      <button class="fbtn pfbtn active" data-f="all">Semua (15)</button>
+      <button class="fbtn pfbtn" data-f="ok">✓ Lengkap (6)</button>
+      <button class="fbtn pfbtn" data-f="rev">Belum Lengkap (5)</button>
+      <button class="fbtn pfbtn" data-f="none">Tidak Ada (4)</button>
+    </div>
+  </div></div>
+
+  <div class="section-head"><div><h2>Daftar Per Guru — Program Tahunan</h2><p>Setiap kartu memuat jumlah file Prota, penilaian kelengkapannya dibandingkan portofolio, dan tindakan yang perlu dilakukan guru tersebut.</p></div><span id="pcount" style="font-size:13px;color:var(--muted);font-weight:700"></span></div>
+  <div class="cards" id="pcards"></div>
+  <div class="empty" id="pempty">Tidak ada guru yang cocok dengan pencarian / filter ini.</div>
+
+  <section class="insights">
+    <div class="card">
+      <h2>🚨 Prioritas Tindak Lanjut — Program Tahunan</h2><p class="sub">Pengingat tindakan, urut dari yang paling mendesak.</p>
+      <ul class="list red">
+        <li><span><b>4 guru belum memiliki folder sama sekali</b> — Mr Serge, Ms Lydia, Ms Putri, dan Wu Laoshi belum memiliki folder di 1. Program Tahunan (Prota). Segera buat folder atas nama masing-masing dan unggah Prota untuk semua mapel dan kelas yang diampu.</span></li>
+        <li><span><b>Ms Erika</b> — lengkapi Prota SBDP Kelas 1–2, IPAS Kelas 2, dan Matematika Kelas 2 yang masih hilang.</span></li>
+        <li><span><b>Ms Nur</b> — baru 3 file Kelas 1 dengan judul xlsx yang tidak jelas mapelnya; lengkapi banyak mapel Kelas 1 yang masih hilang dan Science Kelas 2, dengan nama file yang jelas.</span></li>
+        <li><span><b>Ms Vero</b> — lengkapi English Kelas 2 dan Science Kelas 4, dan hapus salah satu duplikat English Kelas 3 (PDF dan docx).</span></li>
+        <li><span><b>Mr Budi</b> — lengkapi Agama Islam dan Science yang belum ada, dan rapikan struktur folder Prota yang berlapis.</span></li>
+        <li><span><b>Mr Adi</b> — rapikan dan verifikasi folder: pisahkan folder CP (5 file CP, bukan Prota) dan periksa file Kelas 4/Kelas 6 yang berada di luar portofolionya.</span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>Temuan &amp; Catatan — Program Tahunan</h2><p class="sub">Pola yang ditemukan saat memeriksa isi folder Prota setiap guru.</p>
+      <ul class="list">
+        <li><span><b>6 guru sudah lengkap:</b> Mr Didit (Informatika K1–K6 + PAI K4), Mr Rudolf (Matematika K6 Fase C, Semester I dan II, 185 JP), Mr Wahyu (PJOK K1–K6), Ms Tiara (Pancasila K1, K2, K3, K5 Semester 1 dan 2), Ms Alfi (6 mapel K4), dan Ms Juwitha (PAK K4, K5, Agama K6).</span></li>
+        <li><span><b>File CP bukan Prota:</b> folder CP terpisah milik Mr Adi berisi 5 file CP dan tidak dihitung dalam jumlah file Prota — file CP dan Prota sebaiknya tidak tercampur.</span></li>
+        <li><span><b>Nama file dan folder perlu jelas:</b> file xlsx Ms Nur tidak mencantumkan mapel pada judulnya, dan nama folder Mr Didit di Drive masih tertulis “Didid” — keduanya menyulitkan pemeriksaan.</span></li>
+        <li><span><b>Duplikat format:</b> English Kelas 3 Ms Vero tersimpan ganda sebagai PDF dan docx; simpan satu versi resmi saja agar tidak membingungkan.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="endnav"><a class="backbtn" href="#/">← Kembali ke Daftar Folder Laporan</a></div>
+
+  </div><!-- /view-01 -->
 
   <div class="view" id="view-05">
   <header class="pagehead">
@@ -478,7 +570,7 @@ a.backbtn{text-decoration:none}
   <div class="soonbox">
     <div class="bignum" id="soonNum">—</div>
     <h3 id="soonTitle">Folder belum dilaporkan</h3>
-    <p>Folder ini belum dilaporkan pada periode ini. Setelah foldernya diperiksa, laporannya akan tampil di sini dengan format penilaian yang sama seperti folder 05 dan folder 16.</p>
+    <p>Folder ini belum dilaporkan pada periode ini. Setelah foldernya diperiksa, laporannya akan tampil di sini dengan format penilaian yang sama seperti folder 01, folder 05, dan folder 16.</p>
   </div>
   </div><!-- /view-soon -->
 
@@ -570,6 +662,43 @@ function renderJ(){
 }
 document.getElementById('jq').addEventListener('input',renderJ);
 var jfb=document.querySelectorAll('.jfbtn'); for(var m=0;m<jfb.length;m++){jfb[m].addEventListener('click',function(){for(var k=0;k<jfb.length;k++)jfb[k].classList.remove('active');this.classList.add('active');jfilter=this.getAttribute('data-f');renderJ();});}
+var PTEACHERS=[
+{n:1,name:"MR ADI",folder:"ADI",files:14,cat:"rev",badge:"Perlu Dirapikan",status:"Sebagian besar K3 ada",note:"Prota Kelas 3 sebagian besar sudah ada. Namun folder juga berisi file Kelas 4 dan Kelas 6 di luar portofolio Mr Adi, serta folder CP terpisah berisi 5 file CP yang bukan Prota, sehingga isi foldernya perlu diverifikasi dan dirapikan.",tindak:"Rapikan folder Prota: pisahkan file CP dari file Prota, verifikasi file Kelas 4 dan Kelas 6 yang berada di luar portofolio, dan pastikan Prota Kelas 3 lengkap untuk semua mapel yang diampu."},
+{n:2,name:"MR BUDI",folder:"Mr Budi",files:4,cat:"rev",badge:"Belum Lengkap",status:"4 file di subfolder PROTA",note:"Baru ada 4 file Prota berbentuk docx di dalam subfolder PROTA. Agama Islam dan Science belum ada, dan struktur folder yang berlapis perlu dirapikan agar file mudah diperiksa.",tindak:"Lengkapi dan unggah Prota Agama Islam dan Science Kelas 5, lalu rapikan struktur folder — letakkan file Prota langsung di folder atas nama Mr Budi tanpa lapisan subfolder yang membingungkan."},
+{n:3,name:"MR DIDIT",folder:"Mr Didid",files:7,cat:"ok",badge:"Lengkap",status:"Informatika K1–K6 + PAI K4",note:"Prota lengkap: Informatika Kelas 1 sampai 6 dan PAI Kelas 4 sudah ada, sesuai portofolio Mr Didit. Catatan kecil: nama folder di Drive masih tertulis “Mr Didid”, perlu dirapikan menjadi “Mr Didit”.",tindak:"Pertahankan — Prota sudah lengkap. Rapikan nama folder di Drive dari “Mr Didid” menjadi “Mr Didit” agar sesuai dengan nama guru."},
+{n:4,name:"MR RUDOLF",folder:"MR RUDOLF",files:1,cat:"ok",badge:"Lengkap",status:"Matematika K6 Fase C lengkap",note:"Satu file Prota Matematika Kelas 6 Fase C yang mencakup Semester I dan II dengan total 185 JP — sudah lengkap untuk mata pelajaran yang diampu.",tindak:"Pertahankan — Prota Matematika Kelas 6 sudah lengkap untuk Semester I dan II."},
+{n:5,name:"MR SERGE",folder:"tidak ada",files:0,cat:"none",badge:"Tidak Ada",status:"Belum ada folder",note:"Tidak ditemukan folder atas nama Mr Serge di folder 1. Program Tahunan (Prota), sehingga belum ada Prota yang dapat dinilai.",tindak:"Segera buat folder atas nama sendiri di 1. Program Tahunan (Prota) dan unggah Prota Science Kelas 6."},
+{n:6,name:"MR WAHYU",folder:"Mr Wahyu",files:6,cat:"ok",badge:"Lengkap",status:"PJOK K1–K6",note:"Prota PJOK lengkap untuk Kelas 1 sampai 6, sesuai portofolio Mr Wahyu.",tindak:"Pertahankan — Prota PJOK Kelas 1 sampai 6 sudah lengkap."},
+{n:7,name:"MS ALFI",folder:"Ms Alfi",files:6,cat:"ok",badge:"Lengkap",status:"6 mapel K4 lengkap",note:"Prota lengkap untuk 6 mata pelajaran Kelas 4 yang diampu Ms Alfi.",tindak:"Pertahankan — Prota untuk semua mapel Kelas 4 sudah lengkap."},
+{n:8,name:"MS ERIKA",folder:"Ms Erika",files:7,cat:"rev",badge:"Belum Lengkap",status:"Agama Katolik K1–K6 + B.Indo K2 ada",note:"Agama Katolik Kelas 1 sampai 6 dan Bahasa Indonesia Kelas 2 sudah ada. Yang masih hilang: SBDP Kelas 1 dan 2, IPAS Kelas 2, dan Matematika Kelas 2.",tindak:"Lengkapi dan unggah Prota SBDP Kelas 1 dan 2, IPAS Kelas 2, dan Matematika Kelas 2 ke folder Ms Erika."},
+{n:9,name:"MS JUWITHA",folder:"Ms Juwitha",files:3,cat:"ok",badge:"Lengkap",status:"PAK K4, K5 + Agama K6",note:"Prota lengkap: PAK Kelas 4 dan 5 serta Agama Kelas 6 sudah ada, sesuai portofolio Ms Juwitha.",tindak:"Pertahankan — Prota PAK Kelas 4 dan 5 serta Agama Kelas 6 sudah lengkap."},
+{n:10,name:"MS LYDIA",folder:"tidak ada",files:0,cat:"none",badge:"Tidak Ada",status:"Belum ada folder",note:"Tidak ditemukan folder atas nama Ms Lydia di folder 1. Program Tahunan (Prota), sehingga belum ada Prota yang dapat dinilai.",tindak:"Segera buat folder atas nama sendiri di 1. Program Tahunan (Prota) dan unggah Prota Agama Kristen Kelas 1, 2, dan 3."},
+{n:11,name:"MS NUR",folder:"Ms Nur Azizah",files:3,cat:"rev",badge:"Belum Lengkap",status:"Hanya 3 file K1",note:"Baru ada 3 file Prota Kelas 1 berbentuk xlsx dengan judul yang tidak jelas mata pelajarannya. Banyak mapel Kelas 1 masih hilang, dan Science Kelas 2 juga belum ada.",tindak:"Lengkapi Prota untuk semua mapel Kelas 1 yang diampu dan Science Kelas 2, serta beri nama file yang jelas mencantumkan mata pelajaran dan kelasnya."},
+{n:12,name:"MS PUTRI",folder:"tidak ada",files:0,cat:"none",badge:"Tidak Ada",status:"Belum ada folder",note:"Tidak ditemukan folder atas nama Ms Putri di folder 1. Program Tahunan (Prota), sehingga belum ada Prota yang dapat dinilai.",tindak:"Segera buat folder atas nama sendiri di 1. Program Tahunan (Prota) dan unggah Prota untuk semua mapel Kelas 5 dan Kelas 6 yang diampu."},
+{n:13,name:"MS TIARA",folder:"Ms Tiara",files:4,cat:"ok",badge:"Lengkap",status:"Pancasila K1, K2, K3, K5",note:"Prota Pancasila lengkap untuk Kelas 1, 2, 3, dan 5 — masing-masing mencakup Semester 1 dan 2.",tindak:"Pertahankan — Prota Pancasila Kelas 1, 2, 3, dan 5 sudah lengkap untuk Semester 1 dan 2."},
+{n:14,name:"MS VERO",folder:"Ms Veronica",files:5,cat:"rev",badge:"Belum Lengkap",status:"English K3, K4, K6 + Math CIE 2",note:"English Kelas 3, 4, dan 6 serta Math CIE Kelas 2 sudah ada. Yang masih hilang: English Kelas 2 dan Science Kelas 4. Ada juga duplikat English Kelas 3 yang tersimpan dalam format PDF dan docx.",tindak:"Lengkapi Prota English Kelas 2 dan Science Kelas 4, dan hapus salah satu duplikat English Kelas 3 (PDF/docx) agar hanya tersimpan satu versi resmi."},
+{n:15,name:"WU LAO SHI",folder:"tidak ada",files:0,cat:"none",badge:"Tidak Ada",status:"Belum ada folder",note:"Tidak ditemukan folder atas nama Wu Laoshi di folder 1. Program Tahunan (Prota), sehingga belum ada Prota yang dapat dinilai.",tindak:"Segera buat folder atas nama sendiri di 1. Program Tahunan (Prota) dan unggah Prota Mandarin Kelas 1 sampai 6."}
+];
+var pfilter='all';
+function renderP(){
+  var q=document.getElementById('pq').value.toLowerCase().trim();
+  var list=PTEACHERS.filter(function(t){ if(pfilter!=='all'&&t.cat!==pfilter)return false; if(q){var hay=(t.name+' '+t.folder+' '+t.badge+' '+t.status+' '+t.note+' '+t.tindak).toLowerCase(); if(hay.indexOf(q)===-1)return false;} return true;});
+  document.getElementById('pcount').textContent='Menampilkan '+list.length+' dari 15 guru';
+  document.getElementById('pempty').style.display=list.length?'none':'block';
+  document.getElementById('pcards').innerHTML=list.map(function(t){
+    var cls=t.cat==='ok'?'green':(t.cat==='none'?'red':'amber');
+    var bcls=t.cat==='ok'?'ok':(t.cat==='none'?'none':'rev');
+    return '<article class="tcard"><div class="tcard-top"><div class="avatar '+cls+'">'+initials(t.name)+'</div><div><h3>'+esc(t.name)+'</h3><div class="folder">Folder Prota: '+esc(t.folder)+' • No. '+t.n+'</div></div><span class="badge '+bcls+'">'+esc(t.badge)+'</span></div>'
+    +'<div class="meta"><span>File Prota<br><b>'+t.files+'</b> file</span><span>Cakupan<br><b style="font-size:12.5px">'+esc(t.status)+'</b></span></div>'
+    +'<div class="kesimpulan"><b>Penilaian</b>'+esc(t.note)+'</div>'
+    +'<div class="tindak"><b>Tindakan untuk guru</b>'+esc(t.tindak)+'</div>'
+    +'<button class="fs-card-btn" type="button" onclick="goFileSaya('+t.n+')">📁 File Saya — folder saya di Drive</button></article>';
+  }).join('');
+}
+document.getElementById('pq').addEventListener('input',renderP);
+var pfb=document.querySelectorAll('.pfbtn'); for(var p=0;p<pfb.length;p++){pfb[p].addEventListener('click',function(){for(var k=0;k<pfb.length;k++)pfb[k].classList.remove('active');this.classList.add('active');pfilter=this.getAttribute('data-f');renderP();});}
+var pbarsData=PTEACHERS.slice().sort(function(a,b){return b.files-a.files}).slice(0,7);
+document.getElementById('pbars').innerHTML=pbarsData.map(function(t){var pct=Math.max(3,Math.round(t.files/14*100));var cls=t.cat==='ok'?'green':(t.cat==='none'?'red':'');return '<div class="bar-row"><b>'+esc(t.name)+'</b><div class="track"><div class="fill '+cls+'" style="width:'+pct+'%"></div></div><span>'+t.files+'</span></div>'}).join('');
 var jbarsData=[{name:'MR RUDOLF',last:5,label:'November'},{name:'MS ALFI',last:4,label:'Awal Oktober'},{name:'MR ADI',last:1,label:'Juli'},{name:'MR WAHYU',last:1,label:'Juli'},{name:'MS NUR',last:1,label:'Juli'},{name:'MS ERIKA',last:1,label:'Juli'}];
 document.getElementById('jbars').innerHTML=jbarsData.map(function(t){var pct=Math.max(4,t.last/5*100);var cls=t.last===5?'green':(t.last===1?'amber':'');return '<div class="bar-row"><b>'+t.name+'</b><div class="track"><div class="fill '+cls+'" style="width:'+pct+'%"></div></div><span style="font-size:11.5px">'+t.label+'</span></div>'}).join('');
 /* ===== Navigasi halaman terpisah =====
@@ -580,7 +709,7 @@ document.getElementById('jbars').innerHTML=jbarsData.map(function(t){var pct=Mat
    Hanya satu halaman yang tampil pada satu waktu; halaman lain tidak
    ikut tampil di bawahnya. Tombol Kembali dan tombol folder berpindah
    alamat halaman, dan tombol Back peramban juga bekerja. */
-var PAGE_TITLES={'view-home':'Dashboard Administrasi Guru — SD MIMI','view-05':'Folder 05 • Modul Ajar / Lesson Plan — SD MIMI','view-16':'Folder 16 • Jurnal Mengajar — SD MIMI','view-file':'File Saya — SD MIMI','view-soon':'Folder Belum Dilaporkan — SD MIMI'};
+var PAGE_TITLES={'view-home':'Dashboard Administrasi Guru — SD MIMI','view-01':'Folder 01 • Program Tahunan (Prota) — SD MIMI','view-05':'Folder 05 • Modul Ajar / Lesson Plan — SD MIMI','view-16':'Folder 16 • Jurnal Mengajar — SD MIMI','view-file':'File Saya — SD MIMI','view-soon':'Folder Belum Dilaporkan — SD MIMI'};
 function showView(id){
   var views=document.querySelectorAll('.view');
   for(var i=0;i<views.length;i++){views[i].classList.toggle('active',views[i].id===id);}
@@ -589,6 +718,7 @@ function showView(id){
 }
 function route(){
   var h=(location.hash||'').replace(/^#/,'');
+  if(h==='/folder/01'){showView('view-01');return;}
   if(h==='/folder/05'){showView('view-05');return;}
   if(h==='/folder/16'){showView('view-16');return;}
   if(h==='/file-saya'){showView('view-file');return;}
@@ -604,6 +734,7 @@ function route(){
 }
 window.addEventListener('hashchange',route);
 var FOLDER_INFO={
+  1:{name:"Program Tahunan (Prota)",desc:"60 file Prota • 6 lengkap • 5 belum lengkap • 4 tidak ada"},
   5:{name:"Modul Ajar / Lesson Plan",desc:"253 dokumen • 1 lengkap & benar • 10 revisi • 4 tidak ada"},
   16:{name:"Jurnal Mengajar",desc:"22 file jurnal • 1 sampai November • 9 belum mengumpulkan"}
 };
@@ -628,14 +759,24 @@ function goFolder(num){
 /* ===== File Saya ===== */
 var MODUL_DRIVE_URLS={1:"https://drive.google.com/drive/folders/1ZBcIS41FZWqwNlSTMSCnVHG96LGaaOlM",3:"https://drive.google.com/drive/folders/1eq3Dse4wvyXMnirzUmwLVJWMt4DwBTzA",4:"https://drive.google.com/drive/folders/1p-NyRwdLOCZBcv8pBGwiH9T3NITTgHH8",6:"https://drive.google.com/drive/folders/1OygJ42jIj46gNySrirdJ8eivvk_opPOu",7:"https://drive.google.com/drive/folders/1Yt0dEl-TqHtbauxvKUFPOO-nIDklgi2p",8:"https://drive.google.com/drive/folders/1xG2oIe6_2rjbGtPqmnJrYZ7PiH7ozZKy",9:"https://drive.google.com/drive/folders/1dfnQxwWaJ0CK7Nweq4ouYbddmHuqvUJJ",11:"https://drive.google.com/drive/folders/1MHhu797QvL_Jx9pqZ6W1S79-dklh6l1Z",12:"https://drive.google.com/drive/folders/1gXWDtgpiJUxU3w_ClM1pZOyFpEAcfXQp",13:"https://drive.google.com/drive/folders/1XNbCjAqk2Oa0kc1kNP1oDSJk5D6VFtIr",14:"https://drive.google.com/drive/folders/1aXXV0XF2s_sIM-nRvBZa6beSMdMG3_rb",15:"https://drive.google.com/drive/folders/1_pEeUhlUsnylH5tjm0wpf8KSavsP1rDU"};
 var JURNAL_DRIVE_URLS={1:"https://drive.google.com/drive/folders/17i_YC2QXh6oynhq2N7phLvcgoaSkt2Di",4:"https://drive.google.com/drive/folders/1U5q6O1GOVydXqLmqw11nQ--zJFPqI9n6",6:"https://drive.google.com/drive/folders/1uVaq1_GdPzOw_rsCiKfyV3LjdyG_YC91",7:"https://drive.google.com/drive/folders/1Ni_RkJDI2-6VNUvtEnot6qoCmRmV4TRF",8:"https://drive.google.com/drive/folders/1djSOKLnbl00W3yPA-X-4O0h8Sk-csWWB",11:"https://drive.google.com/drive/folders/1zQ8c-i_W4CbozXzFKKt44U5abJ6C0ufn"};
+var PROTA_DRIVE_URLS={1:"https://drive.google.com/drive/folders/1YEzXsWMy2lSrM904vNtSdPoFxEbnBbyV",2:"https://drive.google.com/drive/folders/1azn8mc-vTXg2A3v9wJq_o5bNdkkIBnh9",3:"https://drive.google.com/drive/folders/1PiQLhiaUrkLd3ivfVNImR7ab48AxDyjt",4:"https://drive.google.com/drive/folders/1BMvslZe1r2DGf2PkkjuksEfSF3uTGjqX",6:"https://drive.google.com/drive/folders/1GFuSLDnmb__IMQ-ZAH0spAICsn__n9PX",7:"https://drive.google.com/drive/folders/11DXtwRbq1hnwOGWwBMVf-CChvVT4Fddq",8:"https://drive.google.com/drive/folders/1ctAVqMBInDcwAVBQvftFhnQ93dlLuhU9",9:"https://drive.google.com/drive/folders/1PGD2bz_6GLujSXJnk7_-5N1JPafpg1a1",11:"https://drive.google.com/drive/folders/1jDLdDKgsTajT0koKsUyrGTnHf9DjPOgU",13:"https://drive.google.com/drive/folders/19eXXlI0mhg3-tbCZvjugm7qjQVwJ6mcu",14:"https://drive.google.com/drive/folders/1qXh4GugqbTNPH7vKK9F_B_a2RmUPSGU1"};
 var fsSel=document.getElementById('fsSelect');
 fsSel.innerHTML=TEACHERS.map(function(t){return '<option value="'+t.n+'">'+esc(t.name)+'</option>';}).join('');
 function renderFileSaya(){
   var n=parseInt(fsSel.value,10);
-  var ma=null,jn=null,i;
+  var ma=null,jn=null,pr=null,i;
   for(i=0;i<TEACHERS.length;i++){if(TEACHERS[i].n===n)ma=TEACHERS[i];}
   for(i=0;i<JTEACHERS.length;i++){if(JTEACHERS[i].n===n)jn=JTEACHERS[i];}
-  if(!ma||!jn)return;
+  for(i=0;i<PTEACHERS.length;i++){if(PTEACHERS[i].n===n)pr=PTEACHERS[i];}
+  if(!ma||!jn||!pr)return;
+  var prBox;
+  if(pr.folder==='tidak ada'){
+    prBox='<div class="fs-box"><b class="bt">01 — Program Tahunan (Prota)</b><b style="color:var(--ink)">Status: Tidak ada folder</b> atas nama Anda di folder 1. Program Tahunan (Prota), sehingga belum ada file Prota yang dapat dibuka.<br><span style="color:var(--muted)">Tindakan: '+esc(pr.tindak)+'</span></div>';
+  }else if(PROTA_DRIVE_URLS[n]){
+    prBox='<div class="fs-box"><b class="bt">01 — Program Tahunan (Prota)</b>Folder Drive Anda: <b style="color:var(--ink)">'+esc(pr.folder)+'</b> — '+pr.files+' file Prota.<br><span style="color:var(--muted)">Tindakan: '+esc(pr.tindak)+'</span><br><a class="drivebtn" href="'+PROTA_DRIVE_URLS[n]+'" target="_blank" rel="noopener">Buka Folder Prota Saya di Google Drive →</a><br><span style="color:var(--muted);font-size:12.5px">Tombol ini membuka subfolder Program Tahunan atas nama Anda sendiri, bukan folder induk bersama.</span></div>';
+  }else{
+    prBox='<div class="fs-box"><b class="bt">01 — Program Tahunan (Prota)</b>Folder Drive Anda: <b style="color:var(--ink)">'+esc(pr.folder)+'</b> — '+pr.files+' file Prota.<br><span style="color:var(--muted)">Tindakan: '+esc(pr.tindak)+'</span><br><span style="color:var(--muted)">Link subfolder pribadi Anda belum tercantum dalam data laporan ini. Hubungi Tim Kurikulum untuk menerima link folder Anda sendiri.</span></div>';
+  }
   var maBox;
   if(ma.folder==='tidak ada'){
     maBox='<div class="fs-box"><b class="bt">05 — Modul Ajar / Lesson Plan</b><b style="color:var(--ink)">Status: Tidak ada folder</b> atas nama Anda di folder 5. Modul Ajar, sehingga belum ada file yang dapat dibuka.<br><span style="color:var(--muted)">Kesimpulan laporan: '+esc(ma.kes)+'</span></div>';
@@ -652,7 +793,7 @@ function renderFileSaya(){
   }else{
     jnBox='<div class="fs-box"><b class="bt">16 — Jurnal Mengajar</b>Folder jurnal Anda: <b style="color:var(--ink)">'+esc(jn.folder)+'</b> — '+jn.files+' file, periode tercatat '+esc(jn.period)+'.<br><span style="color:var(--muted)">Tindakan: '+esc(jn.tindak)+'</span><br><span style="color:var(--muted)">Link subfolder pribadi Anda belum tercantum dalam data laporan ini. Hubungi Tim Kurikulum untuk menerima link folder Anda sendiri — folder induk bersama tidak dipakai sebagai link File Saya.</span></div>';
   }
-  document.getElementById('fsPanel').innerHTML='<p style="font-size:14.5px;margin:2px 0 0">Menampilkan folder milik <b>'+esc(ma.name)+'</b> — hanya status dan folder atas nama guru ini.</p><div class="fs-grid">'+maBox+jnBox+'</div>';
+  document.getElementById('fsPanel').innerHTML='<p style="font-size:14.5px;margin:2px 0 0">Menampilkan folder milik <b>'+esc(ma.name)+'</b> — hanya status dan folder atas nama guru ini.</p><div class="fs-grid">'+prBox+maBox+jnBox+'</div>';
 }
 fsSel.addEventListener('change',renderFileSaya);
 function goFileSaya(n){
@@ -663,6 +804,7 @@ function goFileSaya(n){
 renderFileSaya();
 render();
 renderJ();
+renderP();
 route();
 </script>
 </body>
