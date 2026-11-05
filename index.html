@@ -147,12 +147,71 @@ footer{margin-top:22px;font-size:12.5px;color:var(--muted);line-height:1.6;borde
 .dircard.next .fno{color:var(--muted)}
 .growth{height:9px;background:var(--surface);border:1px solid var(--line);border-radius:999px;overflow:hidden}
 .growth div{height:100%;width:6%;background:#d4a017;border-radius:999px}
+.view{display:none}
+.view.active{display:block}
+.backbtn{display:inline-flex;align-items:center;gap:8px;margin-top:18px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;font-weight:800;font-size:13.5px;padding:10px 16px;border-radius:999px;cursor:pointer;box-shadow:var(--shadow)}
+.backbtn:hover{border-color:var(--teal);color:var(--teal)}
+.fgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px 12px;margin-top:22px}
+@media(max-width:960px){.fgrid{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:700px){.fgrid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:460px){.fgrid{grid-template-columns:repeat(2,1fr)}}
+.folderbtn{font:inherit;text-align:left;cursor:pointer;background:var(--surface);border:1px solid var(--line);border-radius:6px 14px 14px 14px;padding:14px 14px 13px;position:relative;color:var(--ink);display:flex;flex-direction:column;gap:3px;min-height:118px;box-shadow:var(--shadow)}
+.folderbtn::before{content:"";position:absolute;top:-8px;left:-1px;width:46%;height:9px;background:var(--surface2);border:1px solid var(--line);border-bottom:0;border-radius:8px 10px 0 0}
+.folderbtn.on{border-color:var(--teal)}
+.folderbtn.on::before{background:var(--teal);border-color:var(--teal)}
+.folderbtn.off{box-shadow:none;background:var(--surface2);color:var(--muted)}
+.folderbtn.off::before{background:var(--surface2)}
+.folderbtn .fnum{font-family:"Fraunces",serif;font-size:30px;line-height:1;letter-spacing:-.02em;color:var(--muted)}
+.folderbtn.on .fnum{color:var(--teal)}
+.folderbtn .fname{font-weight:800;font-size:13.5px;line-height:1.35;color:var(--ink)}
+.folderbtn.off .fname{color:var(--muted);font-weight:700}
+.folderbtn .fdesc{font-size:11.5px;color:var(--muted);line-height:1.45}
+.folderbtn .fgo{margin-top:auto;font-size:12px;font-weight:800;color:var(--teal);padding-top:6px}
+.folderbtn.off .fgo{color:var(--muted);font-weight:700}
+.fs-banner{margin-top:22px;background:var(--surface);border:1px solid var(--line);border-left:5px solid #d4a017;border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.fs-banner div{flex:1;min-width:230px}
+.fs-banner h3{margin:0 0 4px;font-size:16px}
+.fs-banner p{margin:0;font-size:13.5px;color:var(--muted);line-height:1.6}
+.fs-go{border:0;background:var(--teal-dark);color:#fff;font:inherit;font-weight:800;font-size:14px;padding:12px 20px;border-radius:999px;cursor:pointer;white-space:nowrap}
+@media(prefers-color-scheme:dark){.fs-go{background:#0d3d38;border:1px solid var(--teal)}}
+.fs-select{width:100%;max-width:460px;padding:13px 16px;border-radius:12px;font-size:15px}
+.fs-panel{margin-top:14px}
+.fs-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+@media(max-width:700px){.fs-grid{grid-template-columns:1fr}}
+.fs-box{background:var(--surface2);border-radius:12px;padding:14px;font-size:13.5px;line-height:1.6}
+.fs-box b.bt{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+.drivebtn{display:inline-block;margin-top:10px;background:var(--teal-dark);color:#fff;text-decoration:none;font-weight:800;font-size:13px;padding:10px 16px;border-radius:999px}
+@media(prefers-color-scheme:dark){.drivebtn{background:#0d3d38;border:1px solid var(--teal)}}
+.fs-card-btn{margin-top:2px;border:1px solid var(--line);background:var(--surface);color:var(--teal);font:inherit;font-weight:800;font-size:12.5px;padding:8px 12px;border-radius:999px;cursor:pointer;align-self:flex-start}
+.steps{margin:10px 0 0;padding-left:20px;display:grid;gap:9px;font-size:13.5px;line-height:1.6}
+.soonbox{margin-top:14px;text-align:center;padding:44px 22px;background:var(--surface);border:1px dashed var(--line);border-radius:var(--radius);color:var(--muted)}
+.soonbox .bignum{font-family:"Fraunces",serif;font-size:56px;line-height:1;color:var(--muted)}
+.soonbox h3{color:var(--ink);margin:10px 0 4px;font-size:18px}
+.soonbox p{margin:0 auto;max-width:480px;font-size:13.5px;line-height:1.6}
+@media print{.view{display:none!important}.view.active{display:block!important}}
+.pagehead{margin-top:18px;background:var(--teal-dark);color:#fff;border-radius:22px;padding:24px 28px 26px;position:relative;overflow:hidden}
+@media(prefers-color-scheme:dark){.pagehead{background:#0d3d38}}
+.pagehead::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,rgba(255,255,255,.025) 0 2px,transparent 2px 26px);pointer-events:none}
+.pagehead>*{position:relative}
+.crumb{font-size:12px;font-weight:700;opacity:.85;letter-spacing:.02em}
+.crumb b{color:#f0c94a}
+.ph-row{display:flex;gap:22px;align-items:flex-start;margin-top:14px}
+@media(max-width:560px){.ph-row{gap:14px}}
+.ph-num{font-family:"Fraunces",serif;font-size:66px;line-height:.95;color:#f0c94a;letter-spacing:-.02em;flex:none}
+@media(max-width:560px){.ph-num{font-size:42px}}
+.pagehead h1{font-family:"Fraunces",serif;font-size:clamp(26px,4.5vw,38px);line-height:1.08;margin:2px 0 8px;letter-spacing:-.02em}
+.pagehead p{opacity:.92;margin:0;font-size:14.5px;line-height:1.6;max-width:680px}
+.pagehead .hero-meta{margin-top:16px}
+.backlink{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);color:#fff;text-decoration:none;font-weight:800;font-size:13px;padding:9px 15px;border-radius:999px}
+.backlink:hover{background:rgba(255,255,255,.22)}
+.endnav{display:flex;justify-content:center;margin-top:22px}
+a.backbtn{text-decoration:none}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="topbar"><span>SD MIMI &nbsp;•&nbsp; Kurikulum</span><span>Folder: <b>5. Modul Ajar</b> &amp; <b>16. Jurnal Mengajar</b> &nbsp;•&nbsp; November 2026</span></div>
-
+  <div class="view active" id="view-home">
+  <div class="topbar"><span>SD MIMI &nbsp;•&nbsp; Kurikulum</span><span>Halaman Depan — Daftar Folder Laporan &nbsp;•&nbsp; November 2026</span></div>
   <header class="cover">
     <div class="cover-gold"></div>
     <div class="cover-inner">
@@ -177,39 +236,37 @@ footer{margin-top:22px;font-size:12.5px;color:var(--muted);line-height:1.6;borde
     </div>
   </header>
 
-  <nav class="tabs" aria-label="Bagian dashboard">
-    <a class="tab" href="#daftar-folder">Daftar Folder</a>
-    <a class="tab" href="#modul-ajar">05 — Modul Ajar / Lesson Plan</a>
-    <a class="tab" href="#jurnal-mengajar">16 — Jurnal Mengajar</a>
-  </nav>
+  <div class="part-head" id="daftar-folder"><div><h2>Pilih Folder Laporan</h2><p>Klik tombol folder untuk membuka laporannya. Nomor mengikuti nomor folder arsip administrasi guru. Folder yang belum dilaporkan tampil redup dan belum dapat dibuka laporannya.</p></div><span class="part-tag">2 dari ±35 folder dilaporkan</span></div>
 
-  <div class="part-head" id="daftar-folder"><div><h2>Daftar Folder Laporan</h2><p>Nomor pada setiap kartu mengikuti nomor folder arsip administrasi guru. Folder baru yang ditambahkan kemudian akan tampil di daftar ini dengan nomor foldernya masing-masing.</p></div><span class="part-tag">2 folder dilaporkan</span></div>
+  <div class="fgrid" id="fgrid" role="navigation" aria-label="Tombol folder laporan 01 sampai 35"></div>
 
-  <section class="dirgrid" aria-label="Daftar folder laporan">
-    <a class="dircard" href="#modul-ajar">
-      <div class="fno">05</div>
-      <h3>Modul Ajar / Lesson Plan</h3>
-      <p>Kelengkapan Modul Ajar setiap guru dan kesesuaiannya dengan Pembelajaran Mendalam serta 8 Dimensi Profil Lulusan (DPL).</p>
-      <div class="dirstats"><span class="dirstat"><b>253</b> dokumen</span><span class="dirstat ok">1 lengkap &amp; benar</span><span class="dirstat warn">10 revisi</span><span class="dirstat bad">4 tidak ada</span></div>
-      <span class="dirgo">Buka laporan folder 05 →</span>
-    </a>
-    <a class="dircard" href="#jurnal-mengajar">
-      <div class="fno">16</div>
-      <h3>Jurnal Mengajar</h3>
-      <p>Penilaian isi jurnal mengajar setiap guru dan cakupan periodenya, dengan patokan jurnal terisi sampai November 2026.</p>
-      <div class="dirstats"><span class="dirstat"><b>22</b> file jurnal</span><span class="dirstat ok">1 sampai November</span><span class="dirstat warn">5 belum lengkap</span><span class="dirstat bad">9 belum mengumpulkan</span></div>
-      <span class="dirgo">Buka laporan folder 16 →</span>
-    </a>
-    <div class="dircard next">
-      <div class="fno">+</div>
-      <h3>Folder Berikutnya</h3>
-      <p>Arsip administrasi guru direncanakan berkembang sampai sekitar 35 folder. Folder yang ditambahkan kemudian akan dilaporkan di halaman ini dengan format penilaian yang sama.</p>
-      <div class="growth" role="img" aria-label="Kemajuan pelaporan folder: 2 dari sekitar 35 folder"><div></div></div>
-      <p style="font-size:12.5px"><b style="color:var(--ink)">2 dari ±35 folder</b> sudah dilaporkan pada periode ini.</p>
+  <div class="growth" role="img" aria-label="Kemajuan pelaporan folder: 2 dari sekitar 35 folder" style="margin-top:16px"><div></div></div>
+  <p style="font-size:12.5px;color:var(--muted);margin:8px 0 0"><b style="color:var(--ink)">2 dari ±35 folder</b> sudah dilaporkan pada periode ini. Folder lain ditambahkan menyusul dengan format penilaian yang sama.</p>
+
+  <div class="fs-banner">
+    <div>
+      <h3>File Saya — Khusus Guru</h3>
+      <p>Selain membaca laporan, setiap guru dapat membuka folder file miliknya sendiri di Google Drive. File asli tetap tersimpan di Drive dan aksesnya diatur dari sana, sehingga guru hanya dapat membuka folder yang dibagikan kepadanya.</p>
     </div>
-  </section>
+    <button class="fs-go" type="button" onclick="location.hash='#/file-saya'">Buka File Saya →</button>
+  </div>
+  </div><!-- /view-home -->
 
-  <div class="part-head" id="modul-ajar"><div><h2>Modul Ajar / Lesson Plan</h2><p>Kelengkapan dan kesesuaian Modul Ajar / Lesson Plan / RPP setiap guru dengan Pembelajaran Mendalam dan 8 DPL.</p></div><span class="part-tag">Folder: 5. Modul Ajar</span></div>
+  <div class="view" id="view-05">
+  <header class="pagehead">
+    <a class="backlink" href="#/">← Kembali ke Daftar Folder</a>
+    <div class="crumb" style="margin-top:16px">Daftar Folder Laporan &nbsp;/&nbsp; <b>Folder 05</b></div>
+    <div class="ph-row">
+      <div class="ph-num" aria-hidden="true">05</div>
+      <div>
+        <h1>Modul Ajar / Lesson Plan</h1>
+        <p>Kelengkapan dan kesesuaian Modul Ajar / Lesson Plan / RPP setiap guru dengan Pembelajaran Mendalam dan 8 DPL. Halaman ini khusus laporan Folder 05 — daftar folder dan laporan folder lain berada di halaman masing-masing.</p>
+        <div class="hero-meta"><span class="pill">Folder arsip: 5. Modul Ajar</span><span class="pill">15 guru • 253 dokumen</span><span class="pill">Periode: November 2026</span></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="callout" style="margin:14px 0 14px">📁 <strong>Akses file pribadi:</strong> file asli Modul Ajar tersimpan di Google Drive. Setiap guru membuka folder miliknya sendiri melalui halaman <button type="button" onclick="location.hash='#/file-saya'" style="border:0;background:transparent;color:var(--teal);font:inherit;font-weight:800;cursor:pointer;padding:0;text-decoration:underline">File Saya</button> — atau tombol “File Saya” pada kartunya masing-masing di bawah. Folder guru lain tidak dibagikan kepadanya, sehingga tidak dapat ia buka.</div>
 
   <section class="kpis" aria-label="Ringkasan">
     <div class="kpi teal"><label>Total Guru</label><strong>15</strong><span>sesuai portofolio guru</span></div>
@@ -284,7 +341,25 @@ footer{margin-top:22px;font-size:12.5px;color:var(--muted);line-height:1.6;borde
     </div>
   </section>
 
-  <div class="part-head" id="jurnal-mengajar"><div><h2>Jurnal Mengajar</h2><p>Penilaian berdasarkan isi jurnal setiap guru, bukan hanya ada atau tidaknya folder. Jurnal dinilai lengkap dari sisi periode hanya jika isinya sudah mencapai November 2026.</p></div><span class="part-tag">Folder: 16. Jurnal Mengajar</span></div>
+  <div class="endnav"><a class="backbtn" href="#/">← Kembali ke Daftar Folder Laporan</a></div>
+
+  </div><!-- /view-05 -->
+
+  <div class="view" id="view-16">
+  <header class="pagehead">
+    <a class="backlink" href="#/">← Kembali ke Daftar Folder</a>
+    <div class="crumb" style="margin-top:16px">Daftar Folder Laporan &nbsp;/&nbsp; <b>Folder 16</b></div>
+    <div class="ph-row">
+      <div class="ph-num" aria-hidden="true">16</div>
+      <div>
+        <h1>Jurnal Mengajar</h1>
+        <p>Penilaian berdasarkan isi jurnal setiap guru, bukan hanya ada atau tidaknya folder. Jurnal dinilai lengkap dari sisi periode hanya jika isinya sudah mencapai November 2026. Halaman ini khusus laporan Folder 16 — daftar folder dan laporan folder lain berada di halaman masing-masing.</p>
+        <div class="hero-meta"><span class="pill">Folder arsip: 16. Jurnal Mengajar</span><span class="pill">15 guru • 22 file jurnal</span><span class="pill">Periode dinilai: Juli–November 2026</span></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="callout" style="margin:14px 0 14px">📁 <strong>Akses file pribadi:</strong> file asli jurnal tersimpan di Google Drive. Setiap guru membuka folder jurnal miliknya sendiri melalui halaman <button type="button" onclick="location.hash='#/file-saya'" style="border:0;background:transparent;color:var(--teal);font:inherit;font-weight:800;cursor:pointer;padding:0;text-decoration:underline">File Saya</button> — atau tombol “File Saya” pada kartunya masing-masing di bawah. Folder guru lain tidak dibagikan kepadanya, sehingga tidak dapat ia buka.</div>
 
   <section class="kpis" aria-label="Ringkasan Jurnal Mengajar">
     <div class="kpi teal"><label>Guru Ada Folder</label><strong>6</strong><span>dari 15 guru</span></div>
@@ -357,6 +432,56 @@ footer{margin-top:22px;font-size:12.5px;color:var(--muted);line-height:1.6;borde
     </div>
   </section>
 
+  <div class="endnav"><a class="backbtn" href="#/">← Kembali ke Daftar Folder Laporan</a></div>
+
+  </div><!-- /view-16 -->
+
+  <div class="view" id="view-file">
+  <header class="pagehead">
+    <a class="backlink" href="#/">← Kembali ke Daftar Folder</a>
+    <div class="crumb" style="margin-top:16px">Daftar Folder Laporan &nbsp;/&nbsp; <b>File Saya</b></div>
+    <div style="margin-top:14px">
+      <h1>File Saya</h1>
+      <p>Akses folder file pribadi setiap guru di Google Drive. Pilih nama Anda untuk melihat folder dan status file Anda sendiri. Halaman ini terpisah dari halaman laporan folder.</p>
+    </div>
+  </header>
+
+  <div class="card" style="margin-top:14px">
+    <h2>Bagaimana cara kerjanya?</h2>
+    <p class="sub" style="margin-top:4px;line-height:1.65">File asli guru <b style="color:var(--ink)">tetap tersimpan di Google Drive</b>, bukan di halaman ini. Yang mengatur siapa dapat membuka file adalah <b style="color:var(--ink)">pengaturan berbagi (sharing) di Drive</b>: folder atas nama seorang guru hanya dibagikan kepada guru itu sendiri dan Tim Kurikulum. Karena itu, guru lain yang mencoba membuka folder tersebut akan ditolak oleh Drive dan diminta meminta akses — file guru lain tidak dapat dilihat dari namanya sendiri.</p>
+    <div class="callout"><strong>Catatan:</strong> halaman laporan ini dapat dibaca semua guru, tetapi tombol folder di bawah hanya membuka file apabila akun Google Anda memang sudah diberi akses ke folder tersebut oleh Tim Kurikulum.</div>
+    <label for="fsSelect" style="display:block;font-weight:800;font-size:13.5px;margin:16px 0 8px">Pilih nama Anda</label>
+    <select class="fs-select" id="fsSelect" aria-label="Pilih nama guru"></select>
+    <div class="fs-panel" id="fsPanel"></div>
+  </div>
+
+  <div class="card" style="margin-top:14px">
+    <h2>Panduan Tim Kurikulum — Mengatur Folder per Guru di Drive</h2>
+    <p class="sub">Langkah ini dilakukan satu kali untuk setiap folder guru, supaya benar-benar hanya guru yang bersangkutan yang dapat membukanya.</p>
+    <ol class="steps">
+      <li>Buka folder arsip di Google Drive (misalnya <b>16. Jurnal Mengajar</b>), lalu masuk ke subfolder atas nama guru yang akan diatur.</li>
+      <li>Klik kanan nama subfolder tersebut, pilih <b>Bagikan → Bagikan</b>.</li>
+      <li>Pada bagian <b>Akses umum</b>, pilih <b>Dibatasi</b> — jangan pilih “Siapa saja yang memiliki link”, karena pilihan itu membuat siapa pun yang memegang link dapat membuka foldernya.</li>
+      <li>Tambahkan <b>hanya alamat email guru yang bersangkutan</b>, ditambah email Tim Kurikulum dan Kepala Sekolah bila diperlukan.</li>
+      <li>Atur peran guru tersebut: <b>Pelihat (Viewer)</b> bila guru hanya perlu melihat file, atau <b>Editor</b> bila guru perlu mengunggah file ke foldernya sendiri. Pada pengaturan lanjutan, matikan pilihan agar editor dapat mengubah izin berbagi, supaya guru tidak dapat membagikan foldernya ke orang lain.</li>
+      <li>Klik <b>Salin link</b> pada folder itu, lalu kirimkan link tersebut secara pribadi kepada guru yang bersangkutan. Jangan mengumumkan satu link untuk semua guru.</li>
+      <li>Ulangi langkah yang sama untuk setiap guru dan setiap folder arsip. Periksa kembali daftar orang yang memiliki akses secara berkala, dan cabut akses yang sudah tidak diperlukan.</li>
+      <li>Guru membuka file-nya dari link pribadi tersebut, atau dari menu <b>“Dibagikan kepada saya”</b> di Google Drive miliknya. Apabila Drive menampilkan pesan “Minta akses”, berarti folder itu belum dibagikan ke akun guru tersebut — hubungi Tim Kurikulum.</li>
+    </ol>
+  </div>
+
+  <div class="endnav"><a class="backbtn" href="#/">← Kembali ke Daftar Folder Laporan</a></div>
+  </div><!-- /view-file -->
+
+  <div class="view" id="view-soon">
+  <a class="backbtn" href="#/">← Kembali ke Daftar Folder</a>
+  <div class="soonbox">
+    <div class="bignum" id="soonNum">—</div>
+    <h3 id="soonTitle">Folder belum dilaporkan</h3>
+    <p>Folder ini belum dilaporkan pada periode ini. Setelah foldernya diperiksa, laporannya akan tampil di sini dengan format penilaian yang sama seperti folder 05 dan folder 16.</p>
+  </div>
+  </div><!-- /view-soon -->
+
   <footer>
     Dashboard Admin Guru — SD MIMI • November 2026. Untuk pertanyaan atau klarifikasi hasil pemeriksaan, silakan menghubungi tim kurikulum. Disusun oleh Rudolf A. Luhukay, S.T. — Tim Kurikulum, SD MIMI.
   </footer>
@@ -396,7 +521,8 @@ function render(){
     +'<div class="meta"><span>Dokumen<br><b>'+t.docs+'</b> file</span><span>Status cakupan<br><b style="font-size:12.5px">'+esc(t.status)+'</b></span></div>'
     +'<div class="kesimpulan"><b>Kesimpulan</b>'+esc(t.kes)+'</div>'
     +'<div class="detail"><b style="color:var(--ink)">Catatan utama:</b><br>'+esc(t.note)+'</div>'
-    +'<button class="toggle" type="button">Lihat catatan lengkap ↓</button></article>';
+    +'<button class="toggle" type="button">Lihat catatan lengkap ↓</button>'
+    +'<button class="fs-card-btn" type="button" onclick="goFileSaya('+t.n+')">📁 File Saya — folder saya di Drive</button></article>';
   }).join('');
   var btns=document.querySelectorAll('.toggle');
   for(var i=0;i<btns.length;i++){btns[i].addEventListener('click',function(){var c=this.parentElement;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'Tutup catatan ↑':'Lihat catatan lengkap ↓';});}
@@ -438,15 +564,106 @@ function renderJ(){
     +'<div class="meta"><span>File jurnal<br><b>'+t.files+'</b> file</span><span>Periode tercatat<br><b style="font-size:12.5px">'+esc(t.period)+'</b></span></div>'
     +'<div class="periode">'+chips+'</div>'
     +'<div class="kesimpulan"><b>Penilaian</b>'+esc(t.note)+'</div>'
-    +'<div class="tindak"><b>Tindakan untuk guru</b>'+esc(t.tindak)+'</div></article>';
+    +'<div class="tindak"><b>Tindakan untuk guru</b>'+esc(t.tindak)+'</div>'
+    +'<button class="fs-card-btn" type="button" onclick="goFileSaya('+t.n+')">📁 File Saya — folder saya di Drive</button></article>';
   }).join('');
 }
 document.getElementById('jq').addEventListener('input',renderJ);
 var jfb=document.querySelectorAll('.jfbtn'); for(var m=0;m<jfb.length;m++){jfb[m].addEventListener('click',function(){for(var k=0;k<jfb.length;k++)jfb[k].classList.remove('active');this.classList.add('active');jfilter=this.getAttribute('data-f');renderJ();});}
 var jbarsData=[{name:'MR RUDOLF',last:5,label:'November'},{name:'MS ALFI',last:4,label:'Awal Oktober'},{name:'MR ADI',last:1,label:'Juli'},{name:'MR WAHYU',last:1,label:'Juli'},{name:'MS NUR',last:1,label:'Juli'},{name:'MS ERIKA',last:1,label:'Juli'}];
 document.getElementById('jbars').innerHTML=jbarsData.map(function(t){var pct=Math.max(4,t.last/5*100);var cls=t.last===5?'green':(t.last===1?'amber':'');return '<div class="bar-row"><b>'+t.name+'</b><div class="track"><div class="fill '+cls+'" style="width:'+pct+'%"></div></div><span style="font-size:11.5px">'+t.label+'</span></div>'}).join('');
+/* ===== Navigasi halaman terpisah =====
+   Setiap bagian adalah halaman sendiri dengan alamat sendiri:
+   #/ = halaman depan (daftar folder), #/folder/05 = laporan Modul Ajar,
+   #/folder/16 = laporan Jurnal Mengajar, #/file-saya = File Saya,
+   #/folder/NN = halaman folder yang belum dilaporkan.
+   Hanya satu halaman yang tampil pada satu waktu; halaman lain tidak
+   ikut tampil di bawahnya. Tombol Kembali dan tombol folder berpindah
+   alamat halaman, dan tombol Back peramban juga bekerja. */
+var PAGE_TITLES={'view-home':'Dashboard Administrasi Guru — SD MIMI','view-05':'Folder 05 • Modul Ajar / Lesson Plan — SD MIMI','view-16':'Folder 16 • Jurnal Mengajar — SD MIMI','view-file':'File Saya — SD MIMI','view-soon':'Folder Belum Dilaporkan — SD MIMI'};
+function showView(id){
+  var views=document.querySelectorAll('.view');
+  for(var i=0;i<views.length;i++){views[i].classList.toggle('active',views[i].id===id);}
+  if(PAGE_TITLES[id])document.title=PAGE_TITLES[id];
+  window.scrollTo(0,0);
+}
+function route(){
+  var h=(location.hash||'').replace(/^#/,'');
+  if(h==='/folder/05'){showView('view-05');return;}
+  if(h==='/folder/16'){showView('view-16');return;}
+  if(h==='/file-saya'){showView('view-file');return;}
+  var m=h.match(/^\/folder\/(\d{1,2})$/);
+  if(m){
+    var num=parseInt(m[1],10);
+    var nn=(num<10?'0':'')+num;
+    document.getElementById('soonNum').textContent=nn;
+    document.getElementById('soonTitle').textContent='Folder '+nn+' — Belum Dilaporkan';
+    showView('view-soon');return;
+  }
+  showView('view-home');
+}
+window.addEventListener('hashchange',route);
+var FOLDER_INFO={
+  5:{name:"Modul Ajar / Lesson Plan",desc:"253 dokumen • 1 lengkap & benar • 10 revisi • 4 tidak ada"},
+  16:{name:"Jurnal Mengajar",desc:"22 file jurnal • 1 sampai November • 9 belum mengumpulkan"}
+};
+function goFolder(num){
+  var nn=(num<10?'0':'')+num;
+  var target='#/folder/'+nn;
+  if(location.hash===target){route();}else{location.hash=target;}
+}
+(function buildFolderGrid(){
+  var html='';
+  for(var i=1;i<=35;i++){
+    var nn=(i<10?'0':'')+i;
+    var info=FOLDER_INFO[i];
+    if(info){
+      html+='<button class="folderbtn on" type="button" onclick="goFolder('+i+')"><span class="fnum">'+nn+'</span><span class="fname">'+info.name+'</span><span class="fdesc">'+info.desc+'</span><span class="fgo">Buka laporan →</span></button>';
+    }else{
+      html+='<button class="folderbtn off" type="button" onclick="goFolder('+i+')"><span class="fnum">'+nn+'</span><span class="fname">Folder '+nn+'</span><span class="fdesc">Belum dilaporkan pada periode ini.</span><span class="fgo">Belum tersedia</span></button>';
+    }
+  }
+  document.getElementById('fgrid').innerHTML=html;
+})();
+/* ===== File Saya ===== */
+var MODUL_DRIVE_URLS={1:"https://drive.google.com/drive/folders/1ZBcIS41FZWqwNlSTMSCnVHG96LGaaOlM",3:"https://drive.google.com/drive/folders/1eq3Dse4wvyXMnirzUmwLVJWMt4DwBTzA",4:"https://drive.google.com/drive/folders/1p-NyRwdLOCZBcv8pBGwiH9T3NITTgHH8",6:"https://drive.google.com/drive/folders/1OygJ42jIj46gNySrirdJ8eivvk_opPOu",7:"https://drive.google.com/drive/folders/1Yt0dEl-TqHtbauxvKUFPOO-nIDklgi2p",8:"https://drive.google.com/drive/folders/1xG2oIe6_2rjbGtPqmnJrYZ7PiH7ozZKy",9:"https://drive.google.com/drive/folders/1dfnQxwWaJ0CK7Nweq4ouYbddmHuqvUJJ",11:"https://drive.google.com/drive/folders/1MHhu797QvL_Jx9pqZ6W1S79-dklh6l1Z",12:"https://drive.google.com/drive/folders/1gXWDtgpiJUxU3w_ClM1pZOyFpEAcfXQp",13:"https://drive.google.com/drive/folders/1XNbCjAqk2Oa0kc1kNP1oDSJk5D6VFtIr",14:"https://drive.google.com/drive/folders/1aXXV0XF2s_sIM-nRvBZa6beSMdMG3_rb",15:"https://drive.google.com/drive/folders/1_pEeUhlUsnylH5tjm0wpf8KSavsP1rDU"};
+var JURNAL_DRIVE_URLS={1:"https://drive.google.com/drive/folders/17i_YC2QXh6oynhq2N7phLvcgoaSkt2Di",4:"https://drive.google.com/drive/folders/1U5q6O1GOVydXqLmqw11nQ--zJFPqI9n6",6:"https://drive.google.com/drive/folders/1uVaq1_GdPzOw_rsCiKfyV3LjdyG_YC91",7:"https://drive.google.com/drive/folders/1Ni_RkJDI2-6VNUvtEnot6qoCmRmV4TRF",8:"https://drive.google.com/drive/folders/1djSOKLnbl00W3yPA-X-4O0h8Sk-csWWB",11:"https://drive.google.com/drive/folders/1zQ8c-i_W4CbozXzFKKt44U5abJ6C0ufn"};
+var fsSel=document.getElementById('fsSelect');
+fsSel.innerHTML=TEACHERS.map(function(t){return '<option value="'+t.n+'">'+esc(t.name)+'</option>';}).join('');
+function renderFileSaya(){
+  var n=parseInt(fsSel.value,10);
+  var ma=null,jn=null,i;
+  for(i=0;i<TEACHERS.length;i++){if(TEACHERS[i].n===n)ma=TEACHERS[i];}
+  for(i=0;i<JTEACHERS.length;i++){if(JTEACHERS[i].n===n)jn=JTEACHERS[i];}
+  if(!ma||!jn)return;
+  var maBox;
+  if(ma.folder==='tidak ada'){
+    maBox='<div class="fs-box"><b class="bt">05 — Modul Ajar / Lesson Plan</b><b style="color:var(--ink)">Status: Tidak ada folder</b> atas nama Anda di folder 5. Modul Ajar, sehingga belum ada file yang dapat dibuka.<br><span style="color:var(--muted)">Kesimpulan laporan: '+esc(ma.kes)+'</span></div>';
+  }else if(MODUL_DRIVE_URLS[n]){
+    maBox='<div class="fs-box"><b class="bt">05 — Modul Ajar / Lesson Plan</b>Folder Drive Anda: <b style="color:var(--ink)">'+esc(ma.folder)+'</b> — '+ma.docs+' dokumen.<br><span style="color:var(--muted)">Kesimpulan laporan: '+esc(ma.kes)+'</span><br><a class="drivebtn" href="'+MODUL_DRIVE_URLS[n]+'" target="_blank" rel="noopener">Buka Folder Modul Ajar Saya di Google Drive →</a><br><span style="color:var(--muted);font-size:12.5px">Tombol ini membuka subfolder Modul Ajar atas nama Anda sendiri, bukan folder induk bersama.</span></div>';
+  }else{
+    maBox='<div class="fs-box"><b class="bt">05 — Modul Ajar / Lesson Plan</b>Folder Drive Anda: <b style="color:var(--ink)">'+esc(ma.folder)+'</b> — '+ma.docs+' dokumen.<br><span style="color:var(--muted)">Kesimpulan laporan: '+esc(ma.kes)+'</span><br><span style="color:var(--muted)">Link subfolder pribadi Anda belum tercantum dalam data laporan ini. Hubungi Tim Kurikulum untuk menerima link folder Anda sendiri — folder induk bersama tidak dipakai sebagai link File Saya.</span></div>';
+  }
+  var jnBox;
+  if(jn.folder==='tidak ada'){
+    jnBox='<div class="fs-box"><b class="bt">16 — Jurnal Mengajar</b><b style="color:var(--ink)">Status: Tidak ada folder</b> atas nama Anda di folder 16. Jurnal Mengajar, sehingga belum ada file jurnal yang dapat dibuka.<br><span style="color:var(--muted)">Tindakan: '+esc(jn.tindak)+'</span></div>';
+  }else if(JURNAL_DRIVE_URLS[n]){
+    jnBox='<div class="fs-box"><b class="bt">16 — Jurnal Mengajar</b>Folder jurnal Anda: <b style="color:var(--ink)">'+esc(jn.folder)+'</b> — '+jn.files+' file, periode tercatat '+esc(jn.period)+'.<br><span style="color:var(--muted)">Tindakan: '+esc(jn.tindak)+'</span><br><a class="drivebtn" href="'+JURNAL_DRIVE_URLS[n]+'" target="_blank" rel="noopener">Buka Folder Jurnal Saya di Google Drive →</a><br><span style="color:var(--muted);font-size:12.5px">Tombol ini membuka subfolder Jurnal Mengajar atas nama Anda sendiri, bukan folder induk bersama.</span></div>';
+  }else{
+    jnBox='<div class="fs-box"><b class="bt">16 — Jurnal Mengajar</b>Folder jurnal Anda: <b style="color:var(--ink)">'+esc(jn.folder)+'</b> — '+jn.files+' file, periode tercatat '+esc(jn.period)+'.<br><span style="color:var(--muted)">Tindakan: '+esc(jn.tindak)+'</span><br><span style="color:var(--muted)">Link subfolder pribadi Anda belum tercantum dalam data laporan ini. Hubungi Tim Kurikulum untuk menerima link folder Anda sendiri — folder induk bersama tidak dipakai sebagai link File Saya.</span></div>';
+  }
+  document.getElementById('fsPanel').innerHTML='<p style="font-size:14.5px;margin:2px 0 0">Menampilkan folder milik <b>'+esc(ma.name)+'</b> — hanya status dan folder atas nama guru ini.</p><div class="fs-grid">'+maBox+jnBox+'</div>';
+}
+fsSel.addEventListener('change',renderFileSaya);
+function goFileSaya(n){
+  fsSel.value=String(n);
+  renderFileSaya();
+  if(location.hash==='#/file-saya'){showView('view-file');}else{location.hash='#/file-saya';}
+}
+renderFileSaya();
 render();
 renderJ();
+route();
 </script>
 </body>
 </html>
